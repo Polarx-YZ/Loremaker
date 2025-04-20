@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .translationBox {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    padding: 0px 10vh;
+    border-width: 10px;
+    border-color: black;
+} */
+
+.spacer {
+    padding: 0px 10vh
+}

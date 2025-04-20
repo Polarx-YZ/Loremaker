@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link href="styles/main.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Loremaker</title>
+	</head>
+	<body>
+        <div class="flex flex-col md:flex-row content-center items-center justify-center m-10">
+            <div class="text-4xl p-10 border-8 text-center">
+                <h1>Original</h1>
+                <textarea class="border-4 text-xl m-10 h-64 w-64" id="originalBox"></textarea>
+            </div>
+            <div class="spacer">
+
+            </div>
+            <div class="text-4xl p-10 border-8 text-center">
+                <h1>Translated</h1>
+                <textarea class="border-4 text-xl m-10 h-64 w-64" id="translationBox"></textarea>
+            </div>
+        </div>
+        <script>
+
+            var translate =  function(message) {
+                message = message.replace(/e/g, "3")
+                message = message.replace(/s/g, "2")
+                message = message.replace(/b/g, "6")
+                message = message.replace(/t/g, "7")
+                message = message.replace(/k/g, "l<")
+                message = message.replace(/a/g, "4")
+                message = message.replace(/w/g, "vv")
+                message = message.replace(/o/g, "0")
+                message = message.replace(/i/g, "1")
+                message = message.replace(/c/g, "€")
+                message = message.replace(/\!\?/g, "⁉️")
+                message = message.replace(/\!/g, "‼️")
+                message = message.replace(/\?/g, "❓️")
+
+                return message
+            }
+
+            var detranslate =  function(message) {
+                message = message.replace(/3/g, "e")
+                message = message.replace(/2/g, "s")
+                message = message.replace(/6/g, "b")
+                message = message.replace(/7/g, "t")
+                message = message.replace(/l</g, "k")
+                message = message.replace(/4/g, "a")
+                message = message.replace(/vv/g, "w")
+                message = message.replace(/0/g, "o")
+                message = message.replace(/1/g, "1")
+                message = message.replace(/€/g, "c")
+                message = message.replace(/⁉️/g, "!?")
+                message = message.replace(/‼️/g, "!")
+                message = message.replace(/❓️/g, "?")
+
+                return message
+            }
+
+            $('#originalBox').on('keyup', function() {
+                let originalBox = document.getElementById("originalBox");
+                let translationBox = document.getElementById("translationBox");
+                
+                let originalMessage = originalBox.value;
+                
+                let newMessage = translate(originalMessage)
+
+                translationBox.value = newMessage
+                
+            })
+
+            $('#translationBox').on('keyup', function() {
+                let originalBox = document.getElementById("originalBox");
+                let translationBox = document.getElementById("translationBox");
+                
+                let translatedMessage = translationBox.value;
+                
+                let newMessage = detranslate(translatedMessage)
+
+                originalBox.value = newMessage
+                
+            })
+
+        </script>
+	</body>
+</html>
