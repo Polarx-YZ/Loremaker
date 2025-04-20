@@ -25,19 +25,19 @@
         <script>
 
             var translate =  function(message) {
-                message = message.replace(/e/g, "3")
-                message = message.replace(/s/g, "2")
-                message = message.replace(/b/g, "6")
-                message = message.replace(/t/g, "7")
-                message = message.replace(/k/g, "l<")
-                message = message.replace(/a/g, "4")
-                message = message.replace(/w/g, "vv")
-                message = message.replace(/o/g, "0")
-                message = message.replace(/i/g, "1")
-                message = message.replace(/c/g, "€")
-                message = message.replace(/\!\?/g, "⁉️")
-                message = message.replace(/\!/g, "‼️")
-                message = message.replace(/\?/g, "❓️")
+                message = message.replace(/e/gi, "3")
+                message = message.replace(/s/gi, "2")
+                message = message.replace(/b/gi, "6")
+                message = message.replace(/t/gi, "7")
+                message = message.replace(/k/gi, "l<")
+                message = message.replace(/a/gi, "4")
+                message = message.replace(/w/gi, "vv")
+                message = message.replace(/o/gi, "0")
+                message = message.replace(/i/gi, "1")
+                message = message.replace(/c/gi, "€")
+                message = message.replace(/\!\?/gi, "⁉️")
+                message = message.replace(/\!/gi, "‼️")
+                message = message.replace(/\?/gi, "❓️")
 
                 return message
             }
